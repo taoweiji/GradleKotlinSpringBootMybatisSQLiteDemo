@@ -17,7 +17,7 @@
 
 Gradle也是maven的替代品，拥有maven所有的功能，也拥有maven很多没有的功能。
 
-我一直以来都是使用tomcat + springmvc + mybatis + mysql来开发服务端，这套简单的框架也非常得心应手，但是最近也有了解spring boot，既然这么流行，毕竟有过人之处。
+我一直以来都是使用maven + tomcat + springmvc + mybatis + mysql来开发服务端，这套简单的框架也非常得心应手，但是最近也有了解spring boot。
 
 既然Kotlin可以用来开发Android应用，那么也是可以用来开发Java服务端，一不做二不休，就尝试下Gradle+Kotlin+spring boot，对于不是专注于服务端开发的工程师，自然希望数据库的也可以简单一点，那么就用SQLite来代替Mysql。
 
