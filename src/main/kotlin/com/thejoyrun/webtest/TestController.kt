@@ -1,5 +1,6 @@
 package com.thejoyrun.webtest
 
+import com.thejoyrun.webtest.dao.UserRepository
 import com.thejoyrun.webtest.model.User
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
@@ -15,7 +16,7 @@ class TestController {
         var user1 = User()
         user1.id = 1
         user1.name = "Wiki"
-        userRepository!!.insert(user1)
+//        userRepository!!.insert(user1)
         var user2 = userRepository!!.findById(1)
         println(user2.name)
         return user2

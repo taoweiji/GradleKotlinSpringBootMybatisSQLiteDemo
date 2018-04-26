@@ -3,7 +3,7 @@
  * *
  * @date 2012-5-5 上午10:26:34
  */
-package com.thejoyrun.webtest
+package com.thejoyrun.webtest.dao
 
 import com.thejoyrun.webtest.model.User
 import org.apache.ibatis.annotations.*
