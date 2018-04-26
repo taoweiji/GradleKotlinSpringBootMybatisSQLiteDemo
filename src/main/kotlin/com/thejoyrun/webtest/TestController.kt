@@ -14,7 +14,7 @@ class TestController {
     @GetMapping("/hello")
     fun helloworld(): Any {
         var user1 = User()
-        user1.id = 1
+        user1.id = 2
         user1.name = "Wiki"
 //        userRepository!!.insert(user1)
         var user2 = userRepository!!.findById(1)
