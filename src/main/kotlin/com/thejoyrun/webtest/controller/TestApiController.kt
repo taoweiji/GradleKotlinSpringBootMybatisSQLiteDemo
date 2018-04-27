@@ -16,4 +16,11 @@ class TestApiController {
         val users = userRepository.findAll()
         return users
     }
+
+    @GetMapping("/hi")
+    fun hi(): Any {
+        return "hello world"
+    }
+
+
 }
