@@ -90,6 +90,13 @@ SQLite，是一款轻型的数据库，是遵守ACID的关系型数据库管理�
 
 ### 使用IntelliJ IDEA创建项目过程
 ##### 创建Kotlin的web项目
+流程1
+![image](image/new-project-1.png)
+流程2
+![image](image/new-project-2.png)
+流程3
+![image](image/new-project-3.png)
+
 
 ##### 配置build.gradle文件
 增加Spring Boot、Mybatis、SQLite支持
