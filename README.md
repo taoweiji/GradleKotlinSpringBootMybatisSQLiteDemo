@@ -137,6 +137,10 @@ dependencies {
     compile 'org.xerial:sqlite-jdbc:3.21.0.1'
     // Mybatis
     compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2'
+    // 对jsp依赖
+    compile 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.7'
+    // jsp的jstl表达式
+    compile 'javax.servlet:jstl:1.2'
 }
 ```
 
@@ -200,6 +204,8 @@ interface UserRepository {
 ```
 
 ##### 创建controller类
+
+http://localhost:8080/hello
 ```kotlin
 @RestController
 class TestApiController {
@@ -213,6 +219,48 @@ class TestApiController {
     }
 }
 ```
+http://localhost:8080/test
+```kotlin
+@Controller
+class TestController {
+    @Autowired
+    lateinit var userRepository: UserRepository
+
+    @RequestMapping("/test")
+    fun index(request: HttpServletRequest): String {
+        val users = userRepository.findAll()
+        request.setAttribute("users",users)
+        return "/index.jsp"
+    }
+}
+```
+创建index.jsp
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<table border="2">
+    <tr>
+        <th>名称</th>
+        <th>版本</th>
+    </tr>
+    <c:forEach items="${users}" var="item" varStatus="status">
+        <tr>
+            <td>${item.id}</td>
+            <td>${item.name}</td>
+        </tr>
+    </c:forEach>
+</table>
+</body>
+</html>
+```
+
+
 
 ##### 创建应用入口 MyApplication
 @MapperScan 用来配置扫描该包名以下的dao
@@ -225,8 +273,12 @@ fun main(args: Array<String>) {
     SpringApplication.run(MyApplication::class.java, *args)
 }
 ```
+右击该类运行项目，浏览器访问：
 
 
+http://localhost:8080/hello
+
+http://localhost:8080/test
 
 
 ##### Demo代码

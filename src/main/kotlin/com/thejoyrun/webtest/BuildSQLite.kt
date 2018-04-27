@@ -1,9 +1,10 @@
-import org.junit.Test
-import java.sql.ResultSet
+package com.thejoyrun.webtest
+
 import java.sql.DriverManager
 
 
 /**
+ * 创建数据库文件，并创建表，请右击运行
  * Created by Wiki on 2018/4/27.
  */
 

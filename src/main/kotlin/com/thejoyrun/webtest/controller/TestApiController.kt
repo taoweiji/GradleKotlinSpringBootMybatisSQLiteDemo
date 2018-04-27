@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class TestApiController {
     @Autowired
-    internal var userRepository: UserRepository? = null
+    lateinit var userRepository: UserRepository
 
     @GetMapping("/hello")
     fun hello(): Any {
-        val users = userRepository!!.findAll()
+        val users = userRepository.findAll()
         return users
     }
 }
