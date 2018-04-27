@@ -12,7 +12,7 @@
 
 
 
-## 前言
+### 前言
 我一直以来都是使用Maven+Java+Tomcat+Springmvc+Mybatis+Mysql来搭建小型服务器应用，这套框架很简单，也方便易用，最近我在想会不会有更好的解决方案，加上最近在学习了Kotlin语言开发Android，所以就有了这篇文章。
 
 
@@ -50,12 +50,41 @@ SQLite，是一款轻型的数据库，是遵守ACID的关系型数据库管理�
 
 ### 项目结构及运用环境
 使用IntelliJ IDEA或Android Studio开发运行，该项目的文件结构如下：
+```$xslt
 
-![image](image/project-tree.png)
+├── build.gradle
+├── gradle
+├── mydatabase.sqlite
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── java
+    │   ├── kotlin
+    │   │   └── com
+    │   │       └── thejoyrun
+    │   │           └── webtest
+    │   │               ├── MyApplication.kt
+    │   │               ├── controller
+    │   │               │   ├── TestApiController.kt
+    │   │               │   └── TestController.kt
+    │   │               ├── dao
+    │   │               │   └── UserRepository.kt
+    │   │               └── model
+    │   │                   └── User.kt
+    │   ├── resources
+    │   │   └── application.properties
+    │   └── webapp
+    │       └── index.jsp
+    └── test
+        ├── java
+        ├── kotlin
+        └── resources
+
+```
 
 由于SQLite需要写绝对的文件路径，所以需要配置SQLite路径，application.properties文件的spring.datasource.url字段。
 
-项目无需运行在Tomcat，只需要右击MyApplication.kt，选择命令行运行即可。
+项目无需运行在Tomcat，只需要右击MyApplication.kt，选择`run 'com.thejoyrun.webtest.MyApplicationKt'`行运行即可。
 ![image](image/run-type.png)
 
 
