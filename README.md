@@ -145,8 +145,30 @@ spring.datasource.driver-class-name=org.sqlite.JDBC
 #配置模型路径
 mybatis.type-aliases-package=com.thejoyrun.webtest.model
 ```
+##### 创建SQLite数据库文件
 项目使用SQLite，所以需要一个SQLite文件，可以下载官方的SQLiteManager来创建一个文件，并创建数据表。或者使用以下代码直接生成一个数据库文件和创建数据表。
-
+```kotlin
+fun main(args: Array<String>) {
+    //连接SQLite的JDBC
+    Class.forName("org.sqlite.JDBC")
+    //建立一个数据库名example.db的连接，如果不存在就在当前目录下创建之
+    val conn = DriverManager.getConnection("jdbc:sqlite:src/main/resources/example.db")
+    val stat = conn.createStatement()
+    // //创建一个表,包含id、name两个字段
+    stat.executeUpdate("create table user(id int,name varchar(20));")
+    // 插入一行数据
+    stat.executeUpdate("insert into user values(1,'Wiki1');")
+    stat.executeUpdate("insert into user values(2,'Wiki2');")
+    //查询所有数据
+    val rs = stat.executeQuery("select * from user;")
+    while (rs.next()) { //将查询到的数据打印出来
+        print("id = " + rs.getString("id") + " ")
+        println("name = " + rs.getString("name"))
+    }
+    rs.close()
+    conn.close()
+}
+```
 
 ##### 创建User类
 ```kotlin
