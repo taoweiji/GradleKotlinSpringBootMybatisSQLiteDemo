@@ -98,7 +98,7 @@ SQLite，是一款轻型的数据库，是遵守ACID的关系型数据库管理�
 
 
 ##### 配置build.gradle文件
-增加Spring Boot、Mybatis、SQLite支持
+增加Spring Boot、Mybatis、SQLite、JSP的依赖
 
 ```groovy
 group 'com.thejoyrun'
