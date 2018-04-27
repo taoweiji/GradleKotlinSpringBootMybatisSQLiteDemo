@@ -133,18 +133,7 @@ dependencies {
 }
 ```
 
-##### 配置数据源
-创建/src/main/resources/application.properties文件
-```
-spring.datasource.url=jdbc:sqlite::resource:example.db
-#spring.datasource.url=jdbc:sqlite:/Users/Wiki/Documents/mydatabase.sqlite
-spring.datasource.username=
-spring.datasource.password=
-spring.datasource.driver-class-name=org.sqlite.JDBC
-        
-#配置模型路径
-mybatis.type-aliases-package=com.thejoyrun.webtest.model
-```
+
 ##### 创建SQLite数据库文件
 项目使用SQLite，所以需要一个SQLite文件，可以下载官方的SQLiteManager来创建一个文件，并创建数据表。或者使用以下代码直接生成一个数据库文件和创建数据表。
 ```kotlin
@@ -169,7 +158,18 @@ fun main(args: Array<String>) {
     conn.close()
 }
 ```
-
+##### 配置数据源
+创建/src/main/resources/application.properties文件
+```
+spring.datasource.url=jdbc:sqlite::resource:example.db
+#spring.datasource.url=jdbc:sqlite:/Users/Wiki/Documents/mydatabase.sqlite
+spring.datasource.username=
+spring.datasource.password=
+spring.datasource.driver-class-name=org.sqlite.JDBC
+        
+#配置模型路径
+mybatis.type-aliases-package=com.thejoyrun.webtest.model
+```
 ##### 创建User类
 ```kotlin
 class User {
