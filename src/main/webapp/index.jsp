@@ -15,8 +15,8 @@
 <body>
 <table border="2">
     <tr>
-        <th>名称</th>
-        <th>版本</th>
+        <th>ID</th>
+        <th>Name</th>
     </tr>
     <c:forEach items="${users}" var="item" varStatus="status">
         <tr>
