@@ -49,14 +49,14 @@ SQLite，是一款轻型的数据库，是遵守ACID的关系型数据库管理�
 8. 简单, 轻松的API
 
 ### 项目结构及运用环境
-建议使用IntelliJ IDEA或Android Studio开发运行
+使用IntelliJ IDEA或Android Studio开发运行，该项目的文件结构如下：
 
+![image](image/project-tree.png)
 
-该项目无需运行在Tomcat，只需要右击MyApplication.kt，选择命令行运行即可。但是SQLite的路径需要配置，必须写绝对路径。
-[图文]
+由于SQLite需要写绝对的文件路径，所以需要配置SQLite路径，application.properties文件的spring.datasource.url字段。
 
-
-
+项目无需运行在Tomcat，只需要右击MyApplication.kt，选择命令行运行即可。
+![image](image/run-type.png)
 
 
 
