@@ -166,9 +166,6 @@ spring.datasource.url=jdbc:sqlite::resource:example.db
 spring.datasource.username=
 spring.datasource.password=
 spring.datasource.driver-class-name=org.sqlite.JDBC
-        
-#配置模型路径
-mybatis.type-aliases-package=com.thejoyrun.webtest.model
 ```
 ##### 创建User类
 ```kotlin
