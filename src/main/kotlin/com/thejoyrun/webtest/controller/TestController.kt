@@ -1,4 +1,4 @@
-package com.thejoyrun.webtest
+package com.thejoyrun.webtest.controller
 
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @Controller
-class Test2Controller {
+class TestController {
 
     @RequestMapping("/test")
-    fun helloworld(): String {
+    fun index(): String {
         return "/index.jsp"
     }
 }
