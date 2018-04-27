@@ -13,7 +13,7 @@ class TestApiController {
 
     @GetMapping("/hello")
     fun hello(): Any {
-        val user = userRepository!!.findById(1)
-        return user
+        val users = userRepository!!.findAll()
+        return users
     }
 }

@@ -175,7 +175,6 @@ mybatis.type-aliases-package=com.thejoyrun.webtest.model
 class User {
     var id: Int = 0
     var name:String? = null
-    var age:Int = 0
 }
 ```
 
@@ -186,6 +185,9 @@ interface UserRepository {
 
     @Select("SELECT * FROM User WHERE ID = #{id}")
     fun findById(@Param("id") integer: Int?): User
+
+    @Select("SELECT * FROM User")
+    fun findAll(): List<User>
 
     @Insert("INSERT INTO User(id,name) VALUES(#{id}, #{name})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
@@ -202,8 +204,8 @@ class TestApiController {
 
     @GetMapping("/hello")
     fun hello(): Any {
-        val user = userRepository!!.findById(1)
-        return user
+        val users = userRepository!!.findAll()
+        return users
     }
 }
 ```
