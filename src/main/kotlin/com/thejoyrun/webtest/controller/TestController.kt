@@ -16,7 +16,16 @@ class TestController {
     @RequestMapping("/test")
     fun index(request: HttpServletRequest): String {
         val users = userRepository.findAll()
-        request.setAttribute("users",users)
+        request.setAttribute("users", users)
         return "/index.jsp"
     }
+
+    @RequestMapping("/show")
+    fun show(map: MutableMap<String, Any>): String {
+        val users = userRepository.findAll()
+        map["name"] = "Lx"
+        map["users"] = users
+        return "index"
+    }
+
 }

@@ -36,6 +36,7 @@ dependencies {
     compile("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
     // Spring-boot
     compile("org.springframework.boot:spring-boot-starter-web")
+
     // SQLite
     compile 'org.xerial:sqlite-jdbc:3.21.0.1'
     // Mybatis
@@ -45,4 +46,6 @@ dependencies {
     // jsp的jstl表达式
     compile 'javax.servlet:jstl:1.2'
     testCompile("org.springframework.boot:spring-boot-starter-test")
+
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 }
