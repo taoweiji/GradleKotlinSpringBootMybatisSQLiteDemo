@@ -19,5 +19,4 @@ interface UserRepository {
     @Insert("INSERT INTO User(id,name) VALUES(#{id}, #{name})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
     fun insert(user: User)
-
 }

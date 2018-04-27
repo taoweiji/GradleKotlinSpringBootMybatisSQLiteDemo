@@ -88,6 +88,119 @@ SQLite，是一款轻型的数据库，是遵守ACID的关系型数据库管理�
 ![image](image/run-type.png)
 
 
+### 使用IntelliJ IDEA创建项目过程
+##### 创建Kotlin的web项目
+
+##### 配置build.gradle文件
+增加Spring Boot、Mybatis、SQLite支持
+
+```groovy
+group 'com.thejoyrun'
+version '1.0-SNAPSHOT'
+buildscript {
+    ext.kotlin_version = '1.1.2'
+    ext.springBootVersion = '2.0.1.RELEASE'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        // Kotlin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // Spring-boot
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+    }
+}
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'war'
+sourceCompatibility = 1.8
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // Kotlin
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
+    compile("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
+    // Spring-boot
+    compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+    // SQLite
+    compile 'org.xerial:sqlite-jdbc:3.21.0.1'
+    // Mybatis
+    compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2'
+}
+```
+
+##### 配置数据源
+创建/src/main/resources/application.properties文件
+```
+spring.datasource.url=jdbc:sqlite::resource:example.db
+#spring.datasource.url=jdbc:sqlite:/Users/Wiki/Documents/mydatabase.sqlite
+spring.datasource.username=
+spring.datasource.password=
+spring.datasource.driver-class-name=org.sqlite.JDBC
+        
+#配置模型路径
+mybatis.type-aliases-package=com.thejoyrun.webtest.model
+```
+项目使用SQLite，所以需要一个SQLite文件，可以下载官方的SQLiteManager来创建一个文件，并创建数据表。或者使用以下代码直接生成一个数据库文件和创建数据表。
+
+
+##### 创建User类
+```kotlin
+class User {
+    var id: Int = 0
+    var name:String? = null
+    var age:Int = 0
+}
+```
+
+##### 创建dao类
+```kotlin
+@Repository
+interface UserRepository {
+
+    @Select("SELECT * FROM User WHERE ID = #{id}")
+    fun findById(@Param("id") integer: Int?): User
+
+    @Insert("INSERT INTO User(id,name) VALUES(#{id}, #{name})")
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    fun insert(user: User)
+}
+```
+
+##### 创建controller类
+```kotlin
+@RestController
+class TestApiController {
+    @Autowired
+    internal var userRepository: UserRepository? = null
+
+    @GetMapping("/hello")
+    fun hello(): Any {
+        val user = userRepository!!.findById(1)
+        return user
+    }
+}
+```
+
+##### 创建应用入口 MyApplication
+@MapperScan 用来配置扫描该包名以下的dao
+```kotlin
+@MapperScan("com.thejoyrun.webtest.dao")
+@SpringBootApplication
+open class MyApplication {}
+
+fun main(args: Array<String>) {
+    SpringApplication.run(MyApplication::class.java, *args)
+}
+```
+
+
+
+
 ##### Demo代码
 https://github.com/taoweiji/GradleKotlinSpringBootMybatisSQLiteDemo
 

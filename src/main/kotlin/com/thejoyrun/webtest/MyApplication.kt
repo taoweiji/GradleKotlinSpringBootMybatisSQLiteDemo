@@ -6,10 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @MapperScan("com.thejoyrun.webtest.dao")
 @SpringBootApplication
-open class MyApplication {
-
-
-}
+open class MyApplication {}
 
 fun main(args: Array<String>) {
     SpringApplication.run(MyApplication::class.java, *args)
