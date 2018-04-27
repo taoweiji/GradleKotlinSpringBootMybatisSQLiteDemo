@@ -84,22 +84,8 @@ SQLite，是一款轻型的数据库，是遵守ACID的关系型数据库管理�
 
 由于SQLite需要写绝对的文件路径，所以需要配置SQLite路径，application.properties文件的spring.datasource.url字段。
 
-项目无需运行在Tomcat，只需要右击MyApplication.kt，选择`run 'com.thejoyrun.webtest.MyApplicationKt'`行运行即可。
+项目无需运行在Tomcat,项目的MyApplication.kt有main函数入口，只需要右击MyApplication.kt，选择`run 'com.thejoyrun.webtest.MyApplicationKt'`运行即可。
 ![image](image/run-type.png)
-
-
-
-
-
-
-
-### 项目功能说明
-为了能够比较深刻地表达这个架构的优点，特意开发了一个客户端安装包分发平台，一方面可以提供给客户端的程序员使用，另一方面也可以增强大家对架构的理解。
-[图文]功能介绍，上传（curl），下载，简单权限
-
-提供命令行（文件路径，账号，密钥）上传
-
-
 
 
 
