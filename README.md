@@ -1,4 +1,4 @@
-# 《Gradle+Kotlin结合Spring Boot+Mybatis+SQLite快速开发轻量级服务器应用教程》
+# 《Gradle+Kotlin结合Spring Boot+Mybatis+SQLite快速开发轻量级服务器应用》
 
 标题想了很多，感觉很多的标题都合适，比如:
 
@@ -8,7 +8,6 @@
 
 《打造轻量级的Java服务器框架，无需部署Tomcat，也无需部署Mysql》
 
-《gradle + kotlin + spring boot + mybatis + sqlite 服务端开发》
 
 
 
@@ -19,7 +18,7 @@
 
 
 ### 框架介绍
-该架构使用Gradle+Kotlin+Spring Boot+Mybatis+SQLite来代替Maven+Java+Tomcat+Springmvc+Mybatis+Mysql，其中Gradle代替Maven，Kotlin代替Java，Spring Boot 代替 Tomcat，同时Spring也自带了Springmvc，SQLite代替Mysql。
+该架构使用Gradle+Kotlin+Spring Boot+Mybatis+SQLite来代替Maven+Java+Tomcat+Springmvc+Mybatis+Mysql，其中Gradle代替Maven，Kotlin代替Java，Spring Boot 代替 Tomcat，同时Spring Boot也带了Springmvc，SQLite代替Mysql。
 ##### Kotlin
 Kotlin 是一个用于现代多平台应用的静态编程语言，由 JetBrains 开发。可以编译成Java字节码，也可以编译成JavaScript，方便在没有JVM的设备上运行。
 Kotlin已正式成为Android官方支持开发语言。
@@ -72,7 +71,8 @@ SQLite，是一款轻型的数据库，是遵守ACID的关系型数据库管理�
     │   │               └── model
     │   │                   └── User.kt
     │   ├── resources
-    │   │   └── application.properties
+    │   │   ├── application.properties
+    │   │   └── example.db
     │   └── webapp
     │       └── index.jsp
     └── test
@@ -82,7 +82,6 @@ SQLite，是一款轻型的数据库，是遵守ACID的关系型数据库管理�
 
 ```
 
-由于SQLite需要写绝对的文件路径，所以需要配置SQLite路径，application.properties文件的spring.datasource.url字段。
 
 项目无需运行在Tomcat,项目的MyApplication.kt有main函数入口，只需要右击MyApplication.kt，选择`run 'com.thejoyrun.webtest.MyApplicationKt'`运行即可。
 ![image](image/run-type.png)
@@ -137,7 +136,7 @@ dependencies {
     compile 'org.xerial:sqlite-jdbc:3.21.0.1'
     // Mybatis
     compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2'
-    // 对jsp依赖
+    // 支持jsp
     compile 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.7'
     // jsp的jstl表达式
     compile 'javax.servlet:jstl:1.2'
