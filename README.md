@@ -48,7 +48,7 @@ SQLite，是一款轻型的数据库，是遵守ACID的关系型数据库管理�
 8. 简单, 轻松的API
 
 ### 项目结构及运用环境
-使用IntelliJ IDEA或Android Studio开发运行，该项目的文件结构如下：
+使用IntelliJ IDEA开发运行，该项目的文件结构如下：
 ```$xslt
 
 ├── build.gradle
