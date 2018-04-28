@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{~/css/index.css}">
 </head>
 <body>
-<h3>welcome, <span th:text="${name}"></span></h3>
+<h3 id="title">welcome, <span th:text="${name}"></span></h3>
 
 <table border="1">
     <tr>
