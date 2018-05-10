@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/KotlinSpringBootDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/KotlinSpringBootDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/KotlinSpringBootDemo_endpointsSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/KotlinSpringBootDemo_endpointsSrc.iml" group="KotlinSpringBootDemo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/KotlinSpringBootDemo_functionalTest.iml" filepath="$PROJECT_DIR$/.idea/modules/KotlinSpringBootDemo_functionalTest.iml" group="KotlinSpringBootDemo" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/KotlinSpringBootDemo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/KotlinSpringBootDemo_main.iml" group="KotlinSpringBootDemo" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/KotlinSpringBootDemo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/KotlinSpringBootDemo_test.iml" group="KotlinSpringBootDemo" />
     </modules>
