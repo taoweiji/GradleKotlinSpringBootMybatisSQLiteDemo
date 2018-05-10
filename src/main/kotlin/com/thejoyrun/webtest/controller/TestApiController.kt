@@ -17,7 +17,7 @@ class TestApiController {
         return users
     }
 
-    @GetMapping("/hi")
+    @GetMapping("/hi.do")
     fun hi(): Any {
         return "hello world"
     }

@@ -18,11 +18,19 @@
           <option name="languageVersion" value="1.1" />
           <option name="apiVersion" value="1.1" />
           <option name="pluginClasspaths">
-            <array />
+            <array>
+              <option value="$KOTLIN_BUNDLED$/lib/allopen-compiler-plugin.jar" />
+            </array>
           </option>
           <option name="coroutinesWarn" value="true" />
           <option name="pluginOptions">
-            <array />
+            <array>
+              <option value="plugin:org.jetbrains.kotlin.allopen:annotation=" />
+              <option value="plugin:org.jetbrains.kotlin.allopen:annotation=org.springframework.stereotype.Component" />
+              <option value="plugin:org.jetbrains.kotlin.allopen:annotation=org.springframework.transaction.annotation.Transactional" />
+              <option value="plugin:org.jetbrains.kotlin.allopen:annotation=org.springframework.scheduling.annotation.Async" />
+              <option value="plugin:org.jetbrains.kotlin.allopen:annotation=org.springframework.cache.annotation.Cacheable" />
+            </array>
           </option>
         </compilerArguments>
       </configuration>

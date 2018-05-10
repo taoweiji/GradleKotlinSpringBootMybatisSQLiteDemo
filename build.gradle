@@ -13,13 +13,18 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // Spring-boot
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlin_version}")
+        classpath("com.google.cloud.tools:appengine-gradle-plugin:1.3.0")
     }
 }
 apply plugin: 'java'
 apply plugin: 'kotlin'
+apply plugin: 'kotlin-spring'
 apply plugin: 'war'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'com.google.cloud.tools.appengine'
+
 
 sourceCompatibility = 1.8
 
