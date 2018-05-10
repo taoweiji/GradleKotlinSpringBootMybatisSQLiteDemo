@@ -1,0 +1,9 @@
+env: flex
+runtime: java
+service: springboot
+
+health_check:
+  enable_health_check: False
+
+manual_scaling:
+  instances: 1
