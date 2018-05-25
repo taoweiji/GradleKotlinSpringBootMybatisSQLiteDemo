@@ -57,7 +57,9 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test")
 
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-starter-logging")
 //    appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.59'
+    compile 'org.projectlombok:lombok:1.16.18'
 }
 //appengine {  // App Engine tasks configuration
 //    tools.cloudSdkHome="gcloud-sdk-path"
