@@ -15,10 +15,14 @@ class LoggerTest {
     var logger = LoggerFactory.getLogger(LoggerTest::class.java)
     @Test
     fun test() {
-        for (i in 0..10000){
-            logger.error("i = $i")
-            logger.info("i = $i")
-        }
+        logger.info("ImWiki")
+        logger.warn("ImWiki")
+        logger.error("ImWiki")
+        logger.debug("ImWiki")
+//        for (i in 0..10000){
+//            logger.error("i = $i")
+//            logger.info("i = $i")
+//        }
 
     }
 }
