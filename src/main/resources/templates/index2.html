@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/index.css" th:href="@{~/css/index.css}">
+    <script src="../static/js/index.js" th:src="@{~/js/index.js}"></script>
+</head>
+<body>
+    <div th:text="${user.name}">Wiki</div>
+    <a th:href="${user.link}">查看详情</a>
+</body>
+</html>

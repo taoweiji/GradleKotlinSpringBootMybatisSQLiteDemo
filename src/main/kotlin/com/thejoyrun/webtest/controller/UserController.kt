@@ -18,6 +18,6 @@ class UserController {
     fun show(map: MutableMap<String, Any>, id: Int): String {
         val user = User(id, "Wiki")
         map["user"] = user
-        return "/user.jsp"
+        return "user"
     }
 }

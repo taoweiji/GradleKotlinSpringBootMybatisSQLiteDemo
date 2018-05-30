@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../static/css/index.css" th:href="@{~/css/index.css}">
+    <script src="../static/js/index.js" th:src="@{~/js/index.js}"></script>
 </head>
 <body>
-<h3 id="title">welcome, <span th:text="${name}"></span></h3>
+<!--<h3 id="title">welcome, <span th:text="${name}"></span></h3>-->
+<!--<h3 th:text="${message}"></h3>-->
+<!--<h3 th:utext="${message}"></h3>-->
+
+<!--<div th:text="${session.user.name}"></div>-->
+<!--<div th:text="${user.name}"></div>-->
 
 <table border="1">
     <tr>
@@ -17,12 +23,12 @@
         <td th:text="${user.id}">Onions</td>
         <td th:text="${user.name}">2.41</td>
     </tr>
+    点对点
 </table>
 
 <div th:each="user: ${users}">
     <span th:text="${user.id}"></span>
     <span th:text="${user.name}"></span>
-
 </div>
 <div th:include="footer :: copyright"></div>
 </body>

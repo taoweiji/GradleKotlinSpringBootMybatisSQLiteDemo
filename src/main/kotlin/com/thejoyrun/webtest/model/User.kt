@@ -6,6 +6,7 @@ package com.thejoyrun.webtest.model
 class User {
     var id: Int = 0
     var name:String? = null
+    var link:String? = null
 
     constructor()
 
@@ -13,4 +14,11 @@ class User {
         this.id = id
         this.name = name
     }
+
+    constructor(id: Int, name: String?, link: String?) {
+        this.id = id
+        this.name = name
+        this.link = link
+    }
+
 }

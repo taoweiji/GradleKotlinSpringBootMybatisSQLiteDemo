@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/index.css" th:href="@{~/css/index.css}">
+    <script src="../static/js/index.js" th:src="@{~/js/index.js}"></script>
+</head>
+<body>
+<span th:text="${user.id}"></span>
+<span th:text="${user.name}"></span>
+</body>
+</html>
